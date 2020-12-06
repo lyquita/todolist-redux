@@ -31,7 +31,7 @@ console.log('reducer', action.type, action);
                     }
                 ]
             };
-            console.log({newState});
+            // console.log({newState});
             return newState;
         }
         case 'todos/todoToggled':{
@@ -49,7 +49,7 @@ console.log('reducer', action.type, action);
             }
         }
         case 'todos/todoDeleted':{
-            console.log('old', state);
+            // console.log('old', state);
             const oldArray = state.todos;
             const newArray = oldArray.filter((todo) => todo.id !== action.payload)
             //console.log('new', newState)
@@ -62,7 +62,6 @@ console.log('reducer', action.type, action);
 
             //const arr3 = [arr1];
             //const arr4 = arr1.filter(()=> true);
-
             const newState = {
                 ...state,
                 todos: newArray,

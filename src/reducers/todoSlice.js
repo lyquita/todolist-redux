@@ -1,6 +1,7 @@
 import store from "../stores/index"
 
 const initialState = { 
+    
     todos: [
         // { id: 0, text: 'Learn React', completed: true },
         // { id: 1, text: 'Learn Redux', completed: false, color: 'purple' },
@@ -68,6 +69,7 @@ console.log('reducer', action.type, action);
             };
             return newState;
         }
+
         default:
             return state
 }

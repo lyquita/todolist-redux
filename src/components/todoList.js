@@ -9,13 +9,13 @@ export function TodoList() {
     // console.log(storeTodos)
     //const StoreTodos = store.getState().todos.todos
     return (
-        <ul>
+        <ol style={{listStyle:'none',textAlign:'left'}}>
           {
               pendingTodos.map((item,index)=>(
                   <Todo item={item} key={index}>{item.text}</Todo>
               ))
           }
-        </ul>
+        </ol>
     )
 }
 
@@ -24,12 +24,12 @@ export function CompletedList(){
     const completedTodos = storeTodos.filter((todo) => todo.completed)
     // const item = props.children;
     return(
-        <ul>
+        <ol style={{listStyle:'none',textAlign:'left'}} >
           {
              completedTodos.map((item,index)=>{
              return <Todo item={item} key={index}>{item.text}</Todo>
              })
           }
-        </ul>
+        </ol>
     )
 }

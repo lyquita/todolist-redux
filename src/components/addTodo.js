@@ -1,5 +1,8 @@
-import React,{useState} from 'react'
-import {useDispatch} from 'react-redux'
+import React,{useState} from 'react';
+import {useDispatch} from 'react-redux';
+
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 export default function AddTodo() {
     const[text,setText] = useState('')
@@ -8,17 +11,19 @@ export default function AddTodo() {
     return (
         <form>
         <div>
-            <input 
+            <TextField id="standard-basic" 
             type="text"
             placeholder="pls type your task"
             value={text}
             onChange={handleChange}
             />
-            <button onClick={e => { 
+            <Button 
+            color="primary"
+             onClick={e => { 
                 e.preventDefault();
                 dispatch({type:'todos/todoAdded',payload:text})
                 setText('');
-            }}>Add</button>
+            }}>Add</Button>
         </div></form>
     )
 }

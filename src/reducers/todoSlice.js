@@ -28,7 +28,8 @@ console.log('reducer', action.type, action);
                     {
                         id: nextTodoId(state.todos),
                         text: action.payload,
-                        completed: false
+                        completed: false,
+                        edit: false,
                     }
                 ]
             };
@@ -69,7 +70,36 @@ console.log('reducer', action.type, action);
             };
             return newState;
         }
-
+        case 'todos/todoEdit':{
+            const newState = {
+                ...state,
+                todos: state.todos.map(todo=> {
+                    if(todo.id!==action.payload){
+                        return todo
+                    }
+                    return{
+                        ...todo,
+                        edit: !todo.edit
+                    }
+                })
+            } 
+            return newState     
+        }
+        case 'todos/todoSubmit':{
+            const newState = {
+                ...state,
+                todos:state.todos.map(todo=>{
+                    if(todo.id!==action.payload.id){
+                        return todo
+                    }
+                    return{
+                        ...todo,
+                        text:action.payload.text
+                    }
+                })
+            };
+            return newState
+        }        
         default:
             return state
 }

@@ -9,16 +9,17 @@ import {Provider} from 'react-redux'
 console.log('Initial state: ', store.getState())
 
 const unsubscribe = store.subscribe(() =>
+  // localStorage.setItem('todos', JSON.stringify(store.getState())),
   console.log('State after dispatch: ', store.getState())
 )
 
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about reducers' })
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about stores' })
+//store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+//store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about reducers' })
+//store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about stores' })
 
 
-unsubscribe()
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about substribe' })
+//unsubscribe()
+//store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about substribe' })
 
 ReactDOM.render(
   <React.StrictMode>

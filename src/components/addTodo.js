@@ -9,7 +9,7 @@ export default function AddTodo() {
     const dispatch = useDispatch()
     const handleChange = e => setText(e.target.value)
     return (
-        <form>
+        
         <div>
             <TextField id="standard-basic" 
             type="text"
@@ -24,6 +24,6 @@ export default function AddTodo() {
                 dispatch({type:'todos/todoAdded',payload:text})
                 setText('');
             }}>Add</Button>
-        </div></form>
+        </div>
     )
 }

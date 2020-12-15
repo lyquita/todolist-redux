@@ -4,7 +4,7 @@ import store from '../stores/index'
 import Todo from './todo'
 
 export function TodoList() {
-    const storeTodos = useSelector(state => state.todos.todos);
+    const storeTodos = useSelector(state => state.todos);
     const pendingTodos = storeTodos.filter((todo)=> !todo.completed)
     // console.log(storeTodos)
     //const StoreTodos = store.getState().todos.todos
@@ -20,11 +20,11 @@ export function TodoList() {
 }
 
 export function CompletedList(){
-    const storeTodos = useSelector(state => state.todos.todos);
+    const storeTodos = useSelector(state => state.todos);
     const completedTodos = storeTodos.filter((todo) => todo.completed)
     // const item = props.children;
     return(
-        <ol style={{listStyle:'none',textAlign:'left'}} >
+        <ol style={{listStyle:'none',textAlign:'left',maxWidth:'80%'}} >
           {
              completedTodos.map((item,index)=>{
              return <Todo item={item} key={index}>{item.text}</Todo>

@@ -54,7 +54,7 @@ export default function Todo(props) {
         >
           <Checkbox
             color="primary"
-            checked={props.item.completed ? "checked" : ""}
+            checked={props.item.completed}
             onChange={() => {
               dispatch({ type: "todos/todoToggled", payload: props.item.id });
             }}

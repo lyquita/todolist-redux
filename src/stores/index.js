@@ -6,10 +6,20 @@ let preloadedState
 const persistedTodosString = localStorage.getItem('todos')
 
 if (persistedTodosString){
-    preloadedState = {
-        todos: JSON.parse(persistedTodosString)
-    }
+    preloadedState =  JSON.parse(persistedTodosString);
 }
+
+/*
+{
+  key: value,
+  key2: value2 
+}
+const result = f(...);
+
+const obj = {
+    key: result
+};
+*/
 
 //create store
 

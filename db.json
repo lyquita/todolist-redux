@@ -1,14 +1,26 @@
 [
-{
-"id": 1,
-"title": "Post 1"
-},
-{
-"id": 2,
-"title": "Post 2"
-},
-{
-"id": 3,
-"title": "Post 3"
-}
+  {
+    "id": 0,
+    "text": "hip hop class",
+    "completed": false,
+    "edit": false
+  },
+  {
+    "id": 1,
+    "text": "digital nomad",
+    "completed": false,
+    "edit": false
+  },
+  {
+    "id": 2,
+    "text": "indie hacker",
+    "completed": false,
+    "edit": false
+  },
+  {
+    "id": 3,
+    "text": "independent",
+    "completed": false,
+    "edit": false
+  }
 ]
